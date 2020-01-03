@@ -9,16 +9,35 @@
     </head>
 
     <body>
+        <h2>Canvas fill</h2>
+        <canvas id="canvas1" class="canvas" width="200" height="100"></canvas>
+        
+        <h2>Canvas com traço</h2>
+        <canvas id="canvas2" class="canvas" width="200" height="100"></canvas>
+        
         <h2>Primeiro Canvas</h2>
+        <canvas id="canvas3" class="canvas" width="200" height="100"></canvas>
+        
+        <h2>Primeiro Canvas</h2>
+        <canvas id="canvas4" class="canvas" width="200" height="100"></canvas>
 
-        <canvas id="pCanvas" width="200" height="100"></canvas>
 
         <script>
-            var canvas = document.getElementById("pCanvas");
+            var canvas = document.getElementById("canvas1");
             var ctx = canvas.getContext("2d");
             ctx.fillStyle = "#FF0000";
             ctx.fillRect(0, 0, 150, 75);
         </script>
+
+        <script>
+            var canvas = document.getElementById("canvas2");
+            var ctx = canvas.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.stroke();
+
+        </script>
+
 
     </body>
 </html>
