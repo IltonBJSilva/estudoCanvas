@@ -18,8 +18,11 @@
         <h2>Canvas Circular</h2>
         <canvas id="canvas3" class="canvas" width="200" height="100"></canvas>
         
-        <h2>Primeiro Canvas</h2>
+        <h2>Canvas gradient</h2>
         <canvas id="canvas4" class="canvas" width="200" height="100"></canvas>
+
+        <h2>Canvas gradient nos lados</h2>
+        <canvas id="canvas5" width="200" height="100" style="border:3px solid #000000;"></canvas>
 
 
         <!--Canvas com fill não importa o quanto de espaço coloca so vai ficar dentro-->
@@ -65,6 +68,20 @@
 
             // Cria gradient
             var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+
+            // Cuida do preenchimento
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 10, 150, 80);
+        </script>
+
+        <script>
+            var c = document.getElementById("canvas5");
+            var ctx = c.getContext("2d");
+
+            // Cria gradient de for pra dentro
+            var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
             grd.addColorStop(0, "red");
             grd.addColorStop(1, "white");
 
