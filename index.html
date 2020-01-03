@@ -15,27 +15,48 @@
         <h2>Canvas com traço</h2>
         <canvas id="canvas2" class="canvas" width="200" height="100"></canvas>
         
-        <h2>Primeiro Canvas</h2>
+        <h2>Canvas Circular</h2>
         <canvas id="canvas3" class="canvas" width="200" height="100"></canvas>
         
         <h2>Primeiro Canvas</h2>
         <canvas id="canvas4" class="canvas" width="200" height="100"></canvas>
 
 
+        <!--Canvas com fill não importa o quanto de espaço coloca so vai ficar dentro-->
         <script>
             var canvas = document.getElementById("canvas1");
             var ctx = canvas.getContext("2d");
+            //Adiconar cor
             ctx.fillStyle = "#FF0000";
+            //Espaço que vai ficar
             ctx.fillRect(0, 0, 150, 75);
         </script>
 
         <script>
             var canvas = document.getElementById("canvas2");
             var ctx = canvas.getContext("2d");
+            //Move parte superior
             ctx.moveTo(0, 0);
+            //Movem parte inferior
             ctx.lineTo(200, 100);
             ctx.stroke();
 
+        </script>
+
+        <script>
+            var canvas = document.getElementById("canvas3");
+            var ctx = canvas.getContext("2d");
+            
+            /*
+            1 - Move para esquerda
+            2 - Move para cima
+            3 - Aumenta ou diminui o tamanho da forma
+            4 - defini o quanto vai aparecer
+            5 - um valor que multiplica PI
+            6 - PI que sera multiplicado e se não for esses valores fica cortado
+            */
+            ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
         </script>
 
 
