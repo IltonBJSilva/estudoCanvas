@@ -3,13 +3,24 @@
     <head>
         <script type="text/javascript" src="script.js"></script>
         <link rel="stylesheet" type="text/css" href="estilo.css">
+        <link rel="stylesheet" type="text/javascript" href="script.js">
         <title>Canvas</title>
 
     </head>
 
     <body>
         <h2>Primeiro Canvas</h2>
-        <canvas id="myCanvas" width="200" height="200"></canvas>
+
+        <canvas id="pCanvas" width="200" height="100"></canvas>
+
+        <script>
+            var canvas = document.getElementById("pCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.stroke();
+        </script>
 
     </body>
 </html>
