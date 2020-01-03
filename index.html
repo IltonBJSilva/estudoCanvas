@@ -24,6 +24,15 @@
         <h2>Canvas gradient nos lados</h2>
         <canvas id="canvas5" width="200" height="100" style="border:3px solid #000000;"></canvas>
 
+        <h2>Canvas Texto</h2>
+        <canvas id="canvas6" class="canvas" width="200" height="100"></canvas>
+
+        <h2>Canvas gradient nos lados</h2>
+        <canvas id="canvas7" class="canvas" width="200" height="100"></canvas>
+
+                        
+        <h2>Canvas gradient nos lados</h2>
+        <canvas id="canvas8" class="canvas" width="200" height="100"></canvas>
 
         <!--Canvas com fill não importa o quanto de espaço coloca so vai ficar dentro-->
         <script>
@@ -89,6 +98,16 @@
             ctx.fillStyle = grd;
             ctx.fillRect(10, 10, 150, 80);
         </script>
+
+        <script>
+            var c = document.getElementById("canvas6");
+            var ctx = c.getContext("2d");
+
+            ctx.font = "30px Arial";
+            ctx.fillText("Canvas texto", 10, 50);
+
+        </script>
+
 
 
     </body>
