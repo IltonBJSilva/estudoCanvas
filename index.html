@@ -59,6 +59,20 @@
             ctx.stroke();
         </script>
 
+        <script>
+            var c = document.getElementById("canvas4");
+            var ctx = c.getContext("2d");
+
+            // Cria gradient
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+
+            // Cuida do preenchimento
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 10, 150, 80);
+        </script>
+
 
     </body>
 </html>
