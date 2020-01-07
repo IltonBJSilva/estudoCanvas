@@ -42,6 +42,8 @@
         <br><br>
         <img id="tela" width="220" height="277" src="https://www.w3schools.com/graphics/pic_the_scream.jpg" alt="The Scream">
 
+        <h2>Canvas Com animação</h2>
+        <canvas id="animate" class="canvas" width="220" height="220"></canvas>
 
         <!--Canvas com fill não importa o quanto de espaço coloca so vai ficar dentro-->
         <script>
@@ -147,9 +149,46 @@
                 };
         </script>
 
+        <script>// animação 
+        var canvas;
+        var canvasContext;
+        var horizontalVermelho = 10;
+        var VelocidadeVermelho = 5
 
+        window.onload = function() {
+            
+            canvas = document.getElementById('animate');
+            canvasContext = canvas.getContext('2d');
+            
+            var FramesPorSegundo = 25
+            setInterval(function () { mover(); desenhar(); },
+            1000/FramesPorSegundo);
+            
+        }
 
+        function mover(){
+            // mover vermelho direita, esquerda
+            horizontalVermelho += VelocidadeVermelho;
+            if(horizontalVermelho < 0) VelocidadeVermelho = -VelocidadeVermelho;
+            if(horizontalVermelho > canvas.width-50) VelocidadeVermelho = -VelocidadeVermelho;
+        }
 
+        function desenhar(){
+            // fundo
+            Retangulo(0, 0, canvas.width, canvas.height, 'green');
+            
+            // linha
+            Retangulo(0, 185, canvas.width, 10, 'darkgrey');
+            
+            // bastão de cima
+            Retangulo(horizontalVermelho, 15, 50, 15, 'red');
+        }
+
+        function Retangulo(eixoX, eixoY, largura, altura, cor){
+            canvasContext.fillStyle = cor;
+            canvasContext.fillRect(eixoX,eixoY,largura,altura);
+        }
+        </script>
 
     </body>
 </html>
